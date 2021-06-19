@@ -10,13 +10,17 @@ pipeline {
       stage('Build') {
          steps {
             // Get some code from a GitHub repository 
-            git 'https://github.com/jglick/simple-maven-project-with-tests.git'
+            git 'https://github.com/RogerFarber/simple-maven-project-with-tests.git'
             sh "mvn -Dmaven.test.failure.ignore=true clean compile"
          }
          }
       stage("Test") {
           steps {
+<<<<<<< HEAD
             git 'https://github.com/RogerFarber/FirstPipeline.git'  
+=======
+            git 'https://github.com/RogerFarber/simple-maven-project-with-tests.git'  
+>>>>>>> 8481da678e550204d8ec32cf075a7e0ce83b9204
             sh "mvn -Dmaven.test.failure.ignore=true clean test"
             
           }
@@ -24,7 +28,11 @@ pipeline {
       }
       stage("Deploy") {
           steps {
+<<<<<<< HEAD
             git 'https://github.com/RogerFarber/FirstPipeline.git'  
+=======
+            git 'https://github.com/RogerFarber/simple-maven-project-with-tests.git'  
+>>>>>>> 8481da678e550204d8ec32cf075a7e0ce83b9204
             sh "mvn -Dmaven.test.failure.ignore=true clean install"
             
           }
@@ -40,4 +48,3 @@ pipeline {
 
       }
    }
-
