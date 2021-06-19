@@ -10,7 +10,7 @@ pipeline {
       stage('Build') {
          steps {
             // Get some code from a GitHub repository 
-            git 'https://github.com/akashkrkashyap/maven-simple.git'
+            git 'https://github.com/jglick/simple-maven-project-with-tests.git'
             sh "mvn -Dmaven.test.failure.ignore=true clean compile"
          }
          }
@@ -24,7 +24,7 @@ pipeline {
       }
       stage("Deploy") {
           steps {
-            git 'https://github.com/akashkrkashyap/maven-simple.git'  
+            git 'https://github.com/jglick/simple-maven-project-with-tests.git'  
             sh "mvn -Dmaven.test.failure.ignore=true clean install"
             
           }
@@ -40,4 +40,3 @@ pipeline {
 
       }
    }
-
