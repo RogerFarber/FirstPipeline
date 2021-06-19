@@ -16,7 +16,7 @@ pipeline {
          }
       stage("Test") {
           steps {
-            git 'https://github.com/akashkrkashyap/maven-simple.git'  
+            git 'https://github.com/RogerFarber/FirstPipeline.git'  
             sh "mvn -Dmaven.test.failure.ignore=true clean test"
             
           }
